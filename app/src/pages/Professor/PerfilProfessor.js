@@ -8,10 +8,15 @@ import {
   TouchableRipple,
 } from 'react-native-paper';
 
+import Alunos from './Alunos';
+
+import { useNavigation } from '@react-navigation/native'
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const ProfileScreen = () => {
+  const navigation = useNavigation()
 
   return (
     <SafeAreaView style={styles.container}>
@@ -19,9 +24,7 @@ const ProfileScreen = () => {
       <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Avatar.Image 
-            source={{
-              uri: 'https://api.adorable.io/avatars/80/abott@adorable.png',
-            }}
+            source={require('../../assets/profile/pp.png')}
             size={80}
           />
           <View style={{marginLeft: 20}}>
@@ -60,7 +63,7 @@ const ProfileScreen = () => {
       </View>
 
       <View style={styles.menuWrapper}>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => navigation.navigate('Alunos')}>
           <View style={styles.menuItem}>
             <Icon name="heart-outline" color="#803031" size={25}/>
             <Text style={styles.menuItemText}>Seus Alunos</Text>
@@ -68,13 +71,19 @@ const ProfileScreen = () => {
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
-            <Icon name="credit-card" color="#803031" size={25}/>
+            <Icon name="group" color="#803031" size={25}/>
             <Text style={styles.menuItemText}>Suas Turmas</Text>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
-            <Icon name="account-cog" color="#803031" size={25}/>
+            <Icon name="account" color="#803031" size={25}/>
+            <Text style={styles.menuItemText}>Time de Desenvolvimento</Text>
+          </View>
+        </TouchableRipple>
+        <TouchableRipple onPress={() => {}}>
+          <View style={styles.menuItem}>
+            <Icon name="cog" color="#803031" size={25}/>
             <Text style={styles.menuItemText}>Configurações</Text>
           </View>
         </TouchableRipple>

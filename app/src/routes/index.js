@@ -7,6 +7,7 @@ import SignIn from '../pages/SignIn'
 import HomeProfessor from '../pages/Professor/HomeProfessor'
 import PerfilProfessor from '../pages/Professor/PerfilProfessor'
 import TabNavigator from '../navigation/TabNavigator';
+import Alunos from '../pages/Professor/Alunos';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,12 @@ export default function Routes() {
             <Stack.Screen
                 name="PerfilProfessor"
                 component={PerfilProfessor}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="Alunos"
+                component={Alunos}
                 options={{ headerShown: false }}
             />
 
