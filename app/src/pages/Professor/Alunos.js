@@ -73,12 +73,12 @@ const Alunos = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#242425',
+    backgroundColor: '#fff',
   },
   input: {
     flex: 1,
     height: 50,
-    backgroundColor: '#363636',
+    backgroundColor: '#c6c6c6',
     margin: 30,
     borderRadius: 5,
     fontSize: 19,

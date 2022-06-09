@@ -8,7 +8,6 @@ import {
   TouchableRipple,
 } from 'react-native-paper';
 
-import Alunos from './Alunos';
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -75,7 +74,7 @@ const ProfileScreen = () => {
             <Text style={styles.menuItemText}>Suas Turmas</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => navigation.navigate('Desenvolvedores')}>
           <View style={styles.menuItem}>
             <Icon name="account" color="#803031" size={25}/>
             <Text style={styles.menuItemText}>Time de Desenvolvimento</Text>

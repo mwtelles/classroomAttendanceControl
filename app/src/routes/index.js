@@ -9,6 +9,8 @@ import PerfilProfessor from '../pages/Professor/PerfilProfessor'
 import TabNavigator from '../navigation/TabNavigator';
 import Alunos from '../pages/Professor/Alunos';
 
+import Desenvolvedores from '../pages/Devs';
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
@@ -41,6 +43,12 @@ export default function Routes() {
             <Stack.Screen
                 name="Alunos"
                 component={Alunos}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="Desenvolvedores"
+                component={Desenvolvedores}
                 options={{ headerShown: false }}
             />
 
