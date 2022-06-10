@@ -1,11 +1,21 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React, { useState, useContext } from 'react'
 
 import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native'
+
+import { AuthContext } from '../../contexts/auth'
 
 export default function SignIn() {
-  const navigation = useNavigation()
+
+  const [matricula, setMatricula] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { signIn } = useContext(AuthContext);
+
+  function handleLogin(){
+    signIn(matricula, password)
+  }
+
 
   return (
     <View style={styles.container}>
@@ -16,12 +26,16 @@ export default function SignIn() {
       <Animatable.View animation='fadeInUp' style={styles.containerForm}>
       <Text style={styles.title}>Matricula</Text>
       <TextInput 
+        value={matricula}
+        onChangeText={(text) => setMatricula(text)}
         placeholder="Digite sua matricula..."
         style={styles.input}
       />
 
       <Text style={styles.title}>Senha</Text>
-      <TextInput 
+      <TextInput
+        value={password}
+        onChangeText={(text) => setPassword(text)} 
         placeholder="Senha..."
         autoComplete='password'
         style={styles.input}
@@ -29,7 +43,7 @@ export default function SignIn() {
 
       <TouchableOpacity 
       style={styles.button}
-      onPress={ () => navigation.navigate('HomeProfessor')}>
+      onPress={handleLogin}>
         <Text style={styles.buttonText}>Acessar</Text>
       </TouchableOpacity>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     View,
     Text,
@@ -10,6 +10,8 @@ import {
     TextInput,
     TouchableOpacity,
 } from 'react-native'
+
+import { AuthContext } from '../../contexts/auth';
 
 import Turmas from '../../components/TurmasList'
 
@@ -23,11 +25,13 @@ export default function HomeProfessor() {
 
     const navigation = useNavigation()
 
+    const { nome } = useContext(AuthContext)
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <ScrollView style={{ padding: 20 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 }}>
-                    <Text style={{ fontSize: 16, fontFamily: 'Roboto' }}>Olá, Matheus Telles</Text>
+                    <Text style={{ fontSize: 16, fontFamily: 'Roboto' }}>Olá, {nome}</Text>
                     <TouchableOpacity onPress={() => navigation.navigate('PerfilProfessor')}>
                         <ImageBackground
                             source={require('../../assets/profile/pp.png')}
