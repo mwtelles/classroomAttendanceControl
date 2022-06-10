@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
-import Alunos from '../pages/Professor/Alunos';
-
 export default class Turmas extends Component {
 
     constructor(props){

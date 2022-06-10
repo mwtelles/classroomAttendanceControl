@@ -7,6 +7,7 @@ import Routes from './src/routes'
 import AuthProvider from './src/contexts/auth';
 
 export default function App() {
+
   return (
     <NavigationContainer>
       <AuthProvider>

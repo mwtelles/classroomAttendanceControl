@@ -8,7 +8,6 @@ import {
   TouchableRipple,
 } from 'react-native-paper';
 
-
 import { useNavigation } from '@react-navigation/native'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -84,6 +83,12 @@ const ProfileScreen = () => {
           <View style={styles.menuItem}>
             <Icon name="cog" color="#803031" size={25}/>
             <Text style={styles.menuItemText}>Configurações</Text>
+          </View>
+        </TouchableRipple>
+        <TouchableRipple onPress={() => {}}>
+          <View style={styles.menuItem}>
+            <Icon name="logout" color="#803031" size={25}/>
+            <Text style={styles.menuItemText}>Desconectar</Text>
           </View>
         </TouchableRipple>
       </View>
